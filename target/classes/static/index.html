@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p>List of files <a href="/list">here</a></p>
+     <p>Login<a href=login> here</a></p>
+     <p>Signup<a href=signup> here</a></p>
+<h2>List </h2>
+<table cellpadding="2" cellspacing="2">
+
+	<tr>
+		<th>FileNames</th>
+	</tr>
+
+	<tr th:each="objectlist : ${objectlist}">
+		<td th:text="${objectlist.filename}">	</td>
+	</tr>
+	
+
+
+</table>
+
+</body>
+</html>

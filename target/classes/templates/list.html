@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+   $(document).ready(function() {
+    //To hide the menu
+     $(".hidediv").click(function () {
+     $(".table").hide("fast",function(){
+    });
+   });    
+});
+ $(document).ready(function() {
+	    //To show the menu
+	     $(".showdiv").click(function () {
+	     $(".table").show("fast",function(){
+	    });
+	   });    
+	});
+  
+</script>
+
+
+
+<style>
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+</style>
+    <title>File Listing</title>
+</head>
+<body>
+
+<div style="position: relative;">
+    <div style="position: absolute; top: 0; right: 0;">
+    <p>
+    <input type="button"  onclick="location.href='/logout'" value="logout" >
+    </p></div>
+</div>
+
+<p  th:text="Welcome+' ' + ${First_Name}+' ' + ${Middle_Name}+' ' +${Last_Name} + '!!!'"> </p>
+
+<form method="post" th:attr="action=@{/uploadFile}" enctype="multipart/form-data">
+  <fieldset>
+    Select a file: <input type="file"  id="file" name="file"><br><br>
+  	Description  :	<input type="text" id="description" placeholder="Description of the file" name="description">    
+  <input type="submit" value="Upload">
+ </fieldset>
+</form>
+
+ <p> <button class="hidediv">Hide List</button>
+  <button class="showdiv">Show List</button></p> 
+            
+       <div id="filelist">
+        <table class="table table-striped" style="width:50%">
+            <tr>
+                <th>FileNames</th>
+                <th>Uploaded Time</th>
+                <th>Updated Time</th>
+                <th>Download</th>
+                <th>Description</th>
+                <th>Delete</th>
+
+            </tr>           
+            <tr th:each="Filelist : ${Filelist}">
+                <td th:text="${Filelist.FileName}" th:id ="file">filename</td>
+                <td th:text="${Filelist.UploadTime}">LastModified</td>
+                <td th:text="${Filelist.UploadTime}">LastModified</td>
+                <td> <a th:href="@{${Download}+${Filelist.FileName}}">Download</a></td>
+                <td th:text="${Filelist.Description}">Description</td>
+              <td> <a th:href="@{/deleteFile(fileName=${Filelist.FileName})}">Delete</a></td>
+           </tr>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+amazonProperties:
+  endpointUrl: https://s3.us-east-2.amazonaws.com
+  accessKey: AKIAILEG2QELFADZ67DQ
+  secretKey: 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
+  bucketName: abc-cloud-bucket
+  cloudfrontUrl: https://d126fbt99j9q1r.cloudfront.net
+

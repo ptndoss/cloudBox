@@ -1,0 +1,13 @@
+com/cloudproject/clouddrive/UserDetailsDAO.class
+com/cloudproject/clouddrive/UserRepository.class
+com/cloudproject/clouddrive/UserController.class
+com/cloudproject/clouddrive/UserDetailsDAOImplementation.class
+com/cloudproject/clouddrive/AmazonClient.class
+com/cloudproject/clouddrive/BucketController.class
+com/cloudproject/clouddrive/Application.class
+com/cloudproject/clouddrive/UserRowMapper.class
+com/cloudproject/clouddrive/LoginForm.class
+com/cloudproject/clouddrive/FileUpload.class
+com/cloudproject/clouddrive/LoginController.class
+com/cloudproject/clouddrive/MvcConfig.class
+com/cloudproject/clouddrive/User.class
